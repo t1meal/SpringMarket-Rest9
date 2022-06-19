@@ -6,7 +6,7 @@ create table products
 );
 insert into products (title, price)
 values ('bread', 40),      //1
-       ('bread', 100),     //2
+       ('bread1', 100),     //2
        ('cheese', 400),    //3
        ('coca-cola', 120), //4
        ('pepsi', 110),     //5
@@ -25,11 +25,11 @@ values ('bread', 40),      //1
        ('juice', 50),      //18
        ('eggs', 80),       //19
        ('chicken', 250),   //20
-       ('meat', 400),      //21
-       ('fish', 350),      //22
-       ('ketchup', 55),    //23
-       ('sous', 60),       //24
-       ('sausage', 350),   //25
-       ('yogurt', 70),     //26
-       ('juice', 50),      //27
-       ('chicken', 250); //28
+       ('meat1', 400),      //21
+       ('fish1', 350),      //22
+       ('ketchup1', 55),    //23
+       ('sous1', 60),       //24
+       ('sausage1', 350),   //25
+       ('yogurt1', 70),     //26
+       ('juice1', 50),      //27
+       ('chicken1', 250); //28

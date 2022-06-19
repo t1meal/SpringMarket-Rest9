@@ -15,20 +15,26 @@ import java.util.Optional;
 public class ProductService {
     private final ProductRepository productRepository;
 
-    public Optional<Product> findById (Long id){
-        return productRepository.findById(id);
-    }
-    public Page<Product> findAll(int pageIndex, int pageSize){
+    public Page<Product> findAll(int pageIndex, int pageSize) {
         return productRepository.findAll(PageRequest.of(pageIndex, pageSize));
     }
-    public Product save (Product product){
-        return productRepository.save(product);
-    }
-    public void deleteById (Long id){
-        productRepository.deleteById(id);
+
+    public Optional<Product> findById(Long id) {
+        return productRepository.findById(id);
     }
 
-    public List<Product> findByPriceBetween (int minPrice, int maxPrice){
-        return productRepository.findProductByPriceBetween( minPrice, maxPrice);
+    public Product save(Product product) {
+        return productRepository.save(product);
+    }
+
+    public Product update(Product product) {
+        Product baseProduct = productRepository.findByTitle(product.getTitle()).get();
+        baseProduct.setPrice(product.getPrice());
+        productRepository.save(baseProduct);
+        return baseProduct;
+    }
+
+    public void deleteById(Long id) {
+        productRepository.deleteById(id);
     }
 }
